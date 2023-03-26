@@ -30,9 +30,9 @@
         {
             this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
-            this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripTiket = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -89,6 +89,34 @@
             this.toolStripTabItem1.Tag = "1";
             this.toolStripTabItem1.Text = "Generar Ticket";
             // 
+            // toolStripEx1
+            // 
+            this.toolStripEx1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx1.Image = null;
+            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTiket});
+            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx1.Name = "toolStripEx1";
+            this.toolStripEx1.Office12Mode = false;
+            this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripEx1.Size = new System.Drawing.Size(59, 52);
+            this.toolStripEx1.TabIndex = 0;
+            // 
+            // toolStripTiket
+            // 
+            this.toolStripTiket.Image = global::vista.Properties.Resources.ticket;
+            this.toolStripTiket.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripTiket.Name = "toolStripTiket";
+            this.toolStripTiket.Size = new System.Drawing.Size(50, 35);
+            this.toolStripTiket.Text = "Ticket   ";
+            this.toolStripTiket.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripTiket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripTiket.Click += new System.EventHandler(this.toolStripTiket_Click);
+            // 
             // toolStripTabItem2
             // 
             this.toolStripTabItem2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,33 +132,6 @@
             this.toolStripTabItem2.Size = new System.Drawing.Size(52, 30);
             this.toolStripTabItem2.Tag = "2";
             this.toolStripTabItem2.Text = "Login";
-            // 
-            // toolStripEx1
-            // 
-            this.toolStripEx1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStripEx1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.toolStripEx1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.toolStripEx1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripEx1.Image = null;
-            this.toolStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTiket});
-            this.toolStripEx1.Location = new System.Drawing.Point(0, 1);
-            this.toolStripEx1.Name = "toolStripEx1";
-            this.toolStripEx1.Office12Mode = false;
-            this.toolStripEx1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.toolStripEx1.Size = new System.Drawing.Size(59, 52);
-            this.toolStripEx1.TabIndex = 0;
-            // 
-            // toolStripTiket
-            // 
-            this.toolStripTiket.Image = global::vista.Properties.Resources.ticket;
-            this.toolStripTiket.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripTiket.Name = "toolStripTiket";
-            this.toolStripTiket.Size = new System.Drawing.Size(50, 35);
-            this.toolStripTiket.Text = "Ticket   ";
-            this.toolStripTiket.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripTiket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripTiket.Click += new System.EventHandler(this.toolStripTiket_Click);
             // 
             // menu
             // 

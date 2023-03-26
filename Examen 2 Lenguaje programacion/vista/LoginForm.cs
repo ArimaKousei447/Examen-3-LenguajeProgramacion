@@ -1,11 +1,13 @@
-﻿using System;
+﻿using datos;
+using Entidades;
+using System;
 using System.Windows.Forms;
 
 namespace vista
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -44,12 +46,26 @@ namespace vista
             errorProvider1.Clear();
 
             //Validadar login
+            login login = new login(txtUsuario.Text, txtContra.Text);
 
+            ticketDB ticketBD = new ticketDB();
+            ticked Ticked = new ticked();
+
+            Ticked = ticketBD.Autenticar(login);
+
+
+            if (Ticked != null)
+            {
+                menu menuFormulario = new menu();
+                this.Hide();
+                menuFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("Datos de usuario incorrectos");
+            }
             //llamado al menu
 
-            menu menuFormulario = new menu();
-            this.Hide();
-            menuFormulario.Show();
         }
     }
 }

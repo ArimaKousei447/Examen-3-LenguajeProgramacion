@@ -60,5 +60,52 @@ namespace vista
             }
             errorProvider1.Clear();
         }
+
+        private void comboboxServicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            double precio = 0;
+            double ISV = 0;
+            double descuento = 0;
+            double total = 0;
+
+            descuento = Convert.ToDouble(txtDescuento.Text);
+
+            if (comboboxServicio.Text == "Diagnostico")
+            {
+                precio = 500;
+                txtPrecio.Text = "500";
+                ISV = precio * 0.15;
+                txtISV.Text = Convert.ToString(ISV);
+                total = precio + ISV - descuento;
+
+            }
+            else if (comboboxServicio.Text == "Mantenimiento")
+            {
+                precio = 700;
+                txtPrecio.Text = "700";
+                ISV = precio * 0.15;
+                txtISV.Text = Convert.ToString(ISV);
+                total = precio + ISV - descuento;
+            }
+            else if (comboboxServicio.Text == "Mantenimiento Impresoras")
+            {
+                precio = 1000;
+                txtPrecio.Text = "1000";
+                ISV = precio * 0.15;
+                txtISV.Text = Convert.ToString(ISV);
+                total = precio + ISV - descuento;
+            }
+            else if (comboboxServicio.Text == "Servicio Tecnico")
+            {
+                precio = 1500;
+                txtPrecio.Text = "1500";
+                ISV = precio * 0.15;
+                txtISV.Text = Convert.ToString(ISV);
+                total = precio + ISV - descuento;
+            }
+
+            txtTotalPagar.Text = Convert.ToString(total);
+
+        }
     }
 }

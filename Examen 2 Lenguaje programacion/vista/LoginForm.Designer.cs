@@ -1,6 +1,6 @@
 ﻿namespace vista
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.

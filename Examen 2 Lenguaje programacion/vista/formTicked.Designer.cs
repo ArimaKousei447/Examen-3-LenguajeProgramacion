@@ -39,18 +39,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboboxServicio = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDescripcionSolicitud = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtDescripcionServicio = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtDescuento = new System.Windows.Forms.TextBox();
             this.txtTotalPagar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDescripcionSolicitud = new System.Windows.Forms.TextBox();
-            this.txtDescripcionServicio = new System.Windows.Forms.TextBox();
-            this.comboboxServicio = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
@@ -80,6 +80,7 @@
             this.txtISV.Name = "txtISV";
             this.txtISV.Size = new System.Drawing.Size(139, 20);
             this.txtISV.TabIndex = 2;
+            this.txtISV.Text = "0";
             // 
             // txtPrecio
             // 
@@ -87,6 +88,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(139, 20);
             this.txtPrecio.TabIndex = 3;
+            this.txtPrecio.Text = "0";
             // 
             // label1
             // 
@@ -150,13 +152,28 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // dateTimeFecha
+            // label7
             // 
-            this.dateTimeFecha.Enabled = false;
-            this.dateTimeFecha.Location = new System.Drawing.Point(324, 19);
-            this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(199, 20);
-            this.dateTimeFecha.TabIndex = 5;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(274, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Servicio";
+            // 
+            // comboboxServicio
+            // 
+            this.comboboxServicio.FormattingEnabled = true;
+            this.comboboxServicio.Items.AddRange(new object[] {
+            "Diagnostico",
+            "Mantenimiento",
+            "Mantenimiento Impresoras",
+            "Servicio Tecnico"});
+            this.comboboxServicio.Location = new System.Drawing.Point(325, 60);
+            this.comboboxServicio.Name = "comboboxServicio";
+            this.comboboxServicio.Size = new System.Drawing.Size(198, 21);
+            this.comboboxServicio.TabIndex = 8;
+            this.comboboxServicio.SelectedIndexChanged += new System.EventHandler(this.comboboxServicio_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -166,6 +183,14 @@
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Fecha actual";
+            // 
+            // dateTimeFecha
+            // 
+            this.dateTimeFecha.Enabled = false;
+            this.dateTimeFecha.Location = new System.Drawing.Point(324, 19);
+            this.dateTimeFecha.Name = "dateTimeFecha";
+            this.dateTimeFecha.Size = new System.Drawing.Size(199, 20);
+            this.dateTimeFecha.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -177,6 +202,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Descripcion de solicitud";
             // 
+            // txtDescripcionSolicitud
+            // 
+            this.txtDescripcionSolicitud.Location = new System.Drawing.Point(9, 19);
+            this.txtDescripcionSolicitud.Multiline = true;
+            this.txtDescripcionSolicitud.Name = "txtDescripcionSolicitud";
+            this.txtDescripcionSolicitud.Size = new System.Drawing.Size(506, 96);
+            this.txtDescripcionSolicitud.TabIndex = 0;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtDescripcionServicio);
@@ -186,6 +219,14 @@
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Descripcion de servicio (solucion)";
+            // 
+            // txtDescripcionServicio
+            // 
+            this.txtDescripcionServicio.Location = new System.Drawing.Point(15, 20);
+            this.txtDescripcionServicio.Multiline = true;
+            this.txtDescripcionServicio.Name = "txtDescripcionServicio";
+            this.txtDescripcionServicio.Size = new System.Drawing.Size(506, 96);
+            this.txtDescripcionServicio.TabIndex = 1;
             // 
             // groupBox4
             // 
@@ -204,19 +245,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles de pago";
             // 
-            // txtDescuento
-            // 
-            this.txtDescuento.Location = new System.Drawing.Point(88, 77);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(139, 20);
-            this.txtDescuento.TabIndex = 9;
-            // 
             // txtTotalPagar
             // 
             this.txtTotalPagar.Location = new System.Drawing.Point(88, 103);
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.Size = new System.Drawing.Size(139, 20);
             this.txtTotalPagar.TabIndex = 11;
+            this.txtTotalPagar.Text = "0";
             // 
             // label8
             // 
@@ -227,43 +262,13 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Total a pagar";
             // 
-            // txtDescripcionSolicitud
+            // txtDescuento
             // 
-            this.txtDescripcionSolicitud.Location = new System.Drawing.Point(9, 19);
-            this.txtDescripcionSolicitud.Multiline = true;
-            this.txtDescripcionSolicitud.Name = "txtDescripcionSolicitud";
-            this.txtDescripcionSolicitud.Size = new System.Drawing.Size(506, 96);
-            this.txtDescripcionSolicitud.TabIndex = 0;
-            // 
-            // txtDescripcionServicio
-            // 
-            this.txtDescripcionServicio.Location = new System.Drawing.Point(15, 20);
-            this.txtDescripcionServicio.Multiline = true;
-            this.txtDescripcionServicio.Name = "txtDescripcionServicio";
-            this.txtDescripcionServicio.Size = new System.Drawing.Size(506, 96);
-            this.txtDescripcionServicio.TabIndex = 1;
-            // 
-            // comboboxServicio
-            // 
-            this.comboboxServicio.FormattingEnabled = true;
-            this.comboboxServicio.Items.AddRange(new object[] {
-            "Diagnostico",
-            "Mantenimiento",
-            "Mantenimiento Impresoras",
-            "Servicio Tecnico"});
-            this.comboboxServicio.Location = new System.Drawing.Point(325, 60);
-            this.comboboxServicio.Name = "comboboxServicio";
-            this.comboboxServicio.Size = new System.Drawing.Size(198, 21);
-            this.comboboxServicio.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(274, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Servicio";
+            this.txtDescuento.Location = new System.Drawing.Point(88, 77);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Size = new System.Drawing.Size(139, 20);
+            this.txtDescuento.TabIndex = 9;
+            this.txtDescuento.Text = "0";
             // 
             // btnGuardar
             // 
